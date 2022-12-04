@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>${number}: <span th:text="${number}" ></span></li>
+<!--    중괄호 두개 쓰면 컨버터 적용, 뷰 템플릿인 타임리프는 숫자가 아닌 문자를 출력, 숫자를 문자로 바꾸는 컨버터적용-->
+    <li>${{number}}: <span th:text="${{number}}" ></span></li>
+<!--    컨버터 미적용하면 객체가 출력됨, toString()으로-->
+    <li>${ipPort}: <span th:text="${ipPort}" ></span></li>
+    <li>${{ipPort}}: <span th:text="${{ipPort}}" ></span></li>
+</ul>
+
+</body>
+</html>

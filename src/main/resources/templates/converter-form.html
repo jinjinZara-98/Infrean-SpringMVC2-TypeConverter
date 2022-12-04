@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:object="${form}" th:method="post">
+<!--    중괄호를 하나 더 쳐주지 않아도 th:field의 기능으로 인해 ipPort출력-->
+<!--    이 태그 name은 ipPort value 는 127.0.0.1:8080-->
+    th:field <input type="text" th:field="*{ipPort}"><br/>
+<!--    컨버터 적용 안됨-->
+    th:value <input type="text" th:value="*{ipPort}">(보여주기 용도)<br/>
+    <input type="submit"/>
+</form>
+
+</body>
+</html>
